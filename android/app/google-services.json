@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "748679637875",
+    "project_id": "simple-crud-f2c47",
+    "storage_bucket": "simple-crud-f2c47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748679637875:android:2d45764de9be2b3b797306",
+        "android_client_info": {
+          "package_name": "com.example.booktracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "748679637875-ir9k0rt0d59lcjmpoka3bg45q83ukpcj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8cKzfY0AMt_z8ydyfgDivF8ULrsGHSWs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "748679637875-ir9k0rt0d59lcjmpoka3bg45q83ukpcj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
