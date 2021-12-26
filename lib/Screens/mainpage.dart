@@ -42,6 +42,7 @@ class _MainPageState extends State<MainPage> {
                         child: ListTile(
                           title:Text("${data.docs[index]["name"]}"),
                           trailing:Text("${data.docs[index]["page"]}") ,
+                          onTap: editScreen,
                         ),
                       ), 
                     );
@@ -54,13 +55,10 @@ class _MainPageState extends State<MainPage> {
       ],
     );
   }
-  
+  editScreen(){
 
-  
-}
-
-class func{
-  void addScreen(){
-    
   }
+
+  
 }
+

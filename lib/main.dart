@@ -20,7 +20,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
  int _selectedIndex=0;
  TextEditingController _namecontroller=TextEditingController();
-TextEditingController _pagecontroller=TextEditingController();
+ TextEditingController _pagecontroller=TextEditingController();
  CollectionReference books=FirebaseFirestore.instance.collection('Books');
 
   @override
@@ -54,9 +54,10 @@ TextEditingController _pagecontroller=TextEditingController();
                         ),
                         TextField(
                           autofocus: true,
+                          keyboardType: TextInputType.number,
                           controller: _pagecontroller,
                           decoration: InputDecoration(
-                            hintText:"Enter the book's name",
+                            hintText:"Enter the book's page",
                             contentPadding: EdgeInsets.all(16.0)
                           ),
                         )
