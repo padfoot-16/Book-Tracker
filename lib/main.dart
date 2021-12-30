@@ -8,7 +8,7 @@ import 'package:booktracker/Screens/functions.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(MaterialApp(home:MyApp(),title: "Book Tracker",));
 }
 class MyApp extends StatefulWidget {
   const MyApp({ Key? key }) : super(key: key);
@@ -19,15 +19,17 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
  int _selectedIndex=0;
+ CollectionReference books=FirebaseFirestore.instance.collection('Books');
  TextEditingController _namecontroller=TextEditingController();
  TextEditingController _pagecontroller=TextEditingController();
- CollectionReference books=FirebaseFirestore.instance.collection('Books');
+  @override
+  void initState(){
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Book Tracker",
-      home:SafeArea(
+    return SafeArea(
         child: DefaultTabController(
           length: 2,
           child: Scaffold(
@@ -75,6 +77,9 @@ class _MyAppState extends State<MyApp> {
                                  'page':_pagecontroller.value,
                                }
                              ).then((value) => print("book added")).catchError((error)=> print("Failes to add book:$error"));
+                             Navigator.of(context).pop();
+                             _namecontroller.clear();
+                             _pagecontroller.clear();
                            },
                           child: Text("Add a Book"))
                       ] ,
@@ -110,8 +115,9 @@ class _MyAppState extends State<MyApp> {
               ),
           ),
         ) ,
-        )
     );
+        
+    
   }
   _onItemTapped(int index){
     setState(() {

@@ -56,7 +56,22 @@ class _MainPageState extends State<MainPage> {
     );
   }
   editScreen(){
-
+    showDialog(
+      context:context,
+      builder:(BuildContext context){
+        return AlertDialog(
+          title:Text("Book Tracker"),
+          content:Column(
+            children:[
+              TextField(
+                autofocus:true,
+                keyboardType: TextInputType.number,
+              )
+            ]
+          )
+        );
+      }
+    );
   }
 
   
